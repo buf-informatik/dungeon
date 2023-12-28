@@ -2,6 +2,7 @@ use sdl2::pixels::Color;
 use std::time::Duration;
 #[path = "client/logic/event_handler.rs"]
 mod event_handler;
+use event_handler::handle_events;
 
 fn main() -> Result<(), String> {
     let sdl_context = sdl2::init()?;
@@ -22,10 +23,11 @@ fn main() -> Result<(), String> {
     canvas.clear();
     canvas.present();
     let mut event_pump = sdl_context.event_pump()?;
+
     'running: loop {
         canvas.clear();
         for event in event_pump.poll_iter() {
-            if !event_handler::handle_events(event) {
+            if !handle_events(event) {
                 break 'running;
             }
         }

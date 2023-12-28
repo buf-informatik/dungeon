@@ -1,7 +1,7 @@
-use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
 use sdl2::pixels::Color;
 use std::time::Duration;
+#[path = "client/logic/event_handler.rs"]
+mod event_handler;
 
 fn main() -> Result<(), String> {
     let sdl_context = sdl2::init()?;
@@ -18,22 +18,15 @@ fn main() -> Result<(), String> {
         .build()
         .expect("could not make a canvas");
 
-    canvas.set_draw_color(Color::RGB(50, 50, 50));
+    canvas.set_draw_color(Color::RGB(0, 0, 0));
     canvas.clear();
     canvas.present();
     let mut event_pump = sdl_context.event_pump()?;
     'running: loop {
         canvas.clear();
         for event in event_pump.poll_iter() {
-            match event {
-                Event::Quit { .. }
-                | Event::KeyDown {
-                    keycode: Some(Keycode::Escape),
-                    ..
-                } => {
-                    break 'running;
-                }
-                _ => {}
+            if !event_handler::handle_events(event) {
+                break 'running;
             }
         }
 

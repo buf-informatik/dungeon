@@ -1,17 +1,22 @@
 use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
-mod actions;
+use sdl2::keyboard::{Keycode, Mod};
+mod action;
 
-pub fn handle_events(&event: Event) {
+pub fn handle_events(event: Event) -> bool {
     match event {
-        Event::Quit { .. } => actions::end_game(),
-        Event::KeyDown { .. } => key_events(keycode, keymod),
+        Event::Quit { .. } => action::end_game(),
+        Event::KeyDown {
+            keycode, keymod, ..
+        } => key_events(keycode, keymod),
+        Event::KeyUp { .. } => {}
         _ => {}
     }
+    return true;
 }
 
-fn key_events(&keycode: Option<Keycode>, &keymod: Mod) {
-    match keymode {
-        Keycode::Escape => actions::end_game(),
+fn key_events(keycode: Option<Keycode>, _keymod: Mod) {
+    match keycode {
+        Some(Keycode::Escape) => action::end_game(),
+        _ => {}
     }
 }

@@ -1,16 +1,9 @@
-// #[path = "../../config.rs"]
-// mod config;
-// use config::Cache;
-// use config::Screen;
-#[path = "../screens/loading.rs"]
-mod loading;
-use loading::draw_loading_screen;
-#[path = "../screens/menu.rs"]
-mod menu;
-use menu::draw_menu_screen;
-#[path = "cache.rs"]
-pub mod cache;
-use cache::Cache;
+use crate::client;
+use client::logic;
+use client::screens;
+use logic::cache::Cache;
+use screens::loading::draw_loading_screen;
+use screens::menu::draw_menu_screen;
 
 pub enum Screen {
     Menu,

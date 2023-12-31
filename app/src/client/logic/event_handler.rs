@@ -1,6 +1,6 @@
 use sdl2::event::Event;
 use sdl2::keyboard::{Keycode, Mod};
-mod action;
+use crate::client::logic::action;
 
 pub fn handle_events(event: Event) -> bool {
     match event {

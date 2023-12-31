@@ -1,18 +1,14 @@
-
-// #[path = "../../config.rs"]
-// mod config;
-// use config::Cache;
 pub struct Cache {
-    current_page: String,
-    player_name: String,
-    player_id: i32,
+    // current_page: String,
+    // player_name: String,
+    // player_id: i32,
 }
 
 pub fn new() -> Cache {
-    let mut cache = Cache {
-        current_page: String::from(""),
-        player_name: String::from(""),
-        player_id: 0,
+    let cache = Cache {
+        // current_page: String::from(""),
+        // player_name: String::from(""),
+        // player_id: 0,
     };
     cache
 }

@@ -1,7 +1,5 @@
-#[path = "../logic/router.rs"]
-mod router;
-use router::cache::Cache;
+use crate::client::logic::cache::Cache;
 
-pub fn draw_menu_screen(cache: &mut Cache) {
+pub fn draw_menu_screen(_cache: &mut Cache) {
     println!("Menu screen");
 }

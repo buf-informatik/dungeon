@@ -1,18 +1,17 @@
-use cache::Cache;
 use sdl2::pixels::Color;
-use std::collections::HashMap;
 use std::time::Duration;
-#[path = "client/logic/event_handler.rs"]
-mod event_handler;
-use event_handler::handle_events;
-#[path = "client/logic/router.rs"]
-mod router;
-use router::cache;
+
+pub mod client;
+use cache::Cache;
+use client::logic;
+use logic::cache;
+use logic::event_handler::handle_events;
+use logic::router;
 use router::navigate;
 use router::Screen;
 
 fn main() -> Result<(), String> {
-    let mut cache: cache::Cache = cache::new();
+    let mut cache: Cache = cache::new();
     let sdl_context = sdl2::init()?;
     let video_subsystem = sdl_context.video()?;
 

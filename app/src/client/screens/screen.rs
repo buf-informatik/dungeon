@@ -20,14 +20,6 @@ impl<'a> Screen<'a> {
     pub fn init(&mut self) {
         let screen: String = self.name.to_string();
         println!("Screen {} initialized", screen);
-        match self.canvas.output_size() {
-            Ok((width, height)) => {
-                println!("width: {}, height: {}", width, height);
-                set_background_image(self.canvas, self.background);
-            }
-            Err(e) => {
-                eprintln!("Failed to get the canvas size: {}", e);
-            }
-        }
+        set_background_image(self.canvas, self.background);
     }
 }

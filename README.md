@@ -1,6 +1,4 @@
-# dungeon
-
-## Requirements for execution
+# Dungeon
 
 ### Installation + Setup
 

@@ -6,9 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-sdl2 = "0.36.0"
+sdl2 = { version = "0.36.0", features = ["image"] }
 imgui = "0.11.0"
 imgui-sdl2 = "0.15.3"
 imgui-opengl-renderer = "0.12.1"
 serde = { version = "1.0.193", features = ["derive"] }
-

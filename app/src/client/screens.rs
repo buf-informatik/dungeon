@@ -1,2 +1,9 @@
 pub mod loading;
 pub mod menu;
+pub mod game;
+pub mod maps;
+pub mod shop;
+pub mod settings;
+pub mod character;
+pub mod character_selection;
+pub mod screen;

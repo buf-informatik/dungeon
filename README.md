@@ -8,5 +8,5 @@
 
 ### Execution
 
-- Navigate to the project folder and execute `cargo build`
+- Navigate to the 'app' folder and execute `cargo build`
 - Execute `cargo run` to start the game

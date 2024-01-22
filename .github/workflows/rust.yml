@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install sdl2
-        run: sudo apt-get install libsdl2-dev libsdl2-image-2.8.2-dev
+        run: sudo apt-get install libsdl2-dev libsdl2-image-dev
       - name: Build
         run: cd app && cargo build --verbose
       - name: Run tests

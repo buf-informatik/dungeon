@@ -50,7 +50,7 @@ pub fn set_background_color(canvas: &mut WindowCanvas, color: Color) {
 }
 
 pub fn add_image(options: ImageOption, canvas: &mut WindowCanvas) {
-    let img = format!("./client/assets/{}", options.image);
+    let img = format!("src/client/assets/{}", options.image);
     let texture_creator = canvas.texture_creator();
     let texture = texture_creator.load_texture(img).unwrap();
     let x = get_image_position(options.x, canvas.output_size().unwrap().0, options.width);

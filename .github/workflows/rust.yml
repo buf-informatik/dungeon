@@ -5,6 +5,7 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  workflow_dispatch:
 
 env:
   CARGO_TERM_COLOR: always
@@ -16,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install sdl2
-        run: sudo apt-get install libsdl2-dev libsdl2-image-2.0-0-dev
+        run: sudo apt-get install libsdl2-dev libsdl2-image-2.8.2-dev
       - name: Build
         run: cd app && cargo build --verbose
       - name: Run tests
